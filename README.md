@@ -1,2 +1,2 @@
 # HexaLingo
-Dotnet learning app
+learning app
