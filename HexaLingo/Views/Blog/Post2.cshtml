@@ -1,0 +1,125 @@
+﻿@page
+@model HexaLingo.Views.Blog.Post2Model
+@{
+}
+
+<title>Blog</title>
+<body>
+    <div class="d-flex mt-5">
+        <div>
+            <header>
+                <h1>Odkrywanie Piękna Języka Angielskiego: Słynne Cytaty i Frazy z Literatury</h1>
+                <p>Hello language enthusiasts!</p>
+            </header>
+
+            <section>
+                <h2>Cytaty, Które Przemawiają do Duszy</h2>
+                <ul>
+                    <li>
+                        <strong>"To be or not to be, that is the question."</strong><br>
+                        William Shakespeare, "Hamlet"<br>
+                        To jedno z najbardziej znanych pytań w historii literatury. Nauka języka angielskiego zaczyna się od zrozumienia tych klasycznych słów.
+                    </li>
+
+                    <li>
+                        <strong>"The only thing we have to fear is fear itself."</strong><br>
+                        Franklin D. Roosevelt<br>
+                        Cytat ten jest fragmentem inauguracyjnego przemówienia prezydenta Roosevelta. Zrozumienie tych słów to zanurzenie się w historię i kulturę.
+                    </li>
+
+                    <li>
+                        <strong>"To love and be loved is to feel the sun from both sides."</strong><br>
+                        David Viscott<br>
+                        Ta romantyczna fraza ukazuje siłę miłości. Dodajcie ją do waszego słownika uczuć po angielsku.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Frazy Wielkich Pisarzy</h2>
+                <ul>
+                    <li>
+                        <strong>"It was the best of times, it was the worst of times."</strong><br>
+                        Charles Dickens, "A Tale of Two Cities"<br>
+                        Dickens zaczyna swoją powieść tymi słowami, ukazując kontrasty życia. Zastanówcie się nad ich znaczeniem.
+                    </li>
+
+                    <li>
+                        <strong>"The more that you read, the more things you will know. The more that you learn, the more places you'll go."</strong><br>
+                        Dr. Seuss<br>
+                        Nawet literatura dla dzieci ma mądrość do przekazania. Ta fraza to hołd dla potęgi czytania.
+                    </li>
+
+                    <li>
+                        <strong>"In three words I can sum up everything I've learned about life: it goes on."</strong><br>
+                        Robert Frost<br>
+                        Te trzy słowa zawierają mądrość, która przemawia do wszystkich, niezależnie od poziomu znajomości języka.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Wiersze, Które Malują Obrazy Słowami</h2>
+                <p>
+                    <em>The woods are lovely, dark and deep,</em><br>
+                    (Las jest piękny, ciemny i głęboki,)<br>
+                    <em>But I have promises to keep,</em><br>
+                    (Ale mam obietnice do spełnienia,)<br>
+                    <em>And miles to go before I sleep,</em><br>
+                    (I wiele mil do przejścia, zanim zasnę.)
+                </p>
+                <p><em>Robert Frost, "Stopping by Woods on a Snowy Evening"</em></p>
+                <p>Ten wiersz to prawdziwa perła w koronie poezji angielskiej. Zrozumienie i wyczucie tych słów to podróż przez malownicze pejzaże literatury.</p>
+            </section>
+
+            <section>
+                <h2>Ciekawostki na Koniec</h2>
+                <ul>
+                    <li><strong>Początki "The Catcher in the Rye":</strong> J.D. Salinger pierwotnie planował, aby tytuł jego powieści brzmiał "The Sallinger Caulfield." Czyż nie brzmi to intrygująco?</li>
+
+                    <li><strong>Miejsce Urodzenia Szekspira:</strong> Nie jest pewne, dokładnie gdzie urodził się William Szekspir. Więc pytanie, czy był bardem z Londynu czy prowincji, wciąż pozostaje otwarte.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Podsumowanie</h2>
+                <p>Słynne cytaty, frazy i wiersze z literatury angielskiej to nie tylko lekcje językowe, ale również wizyta w bogatej historii i kulturze. Zapraszam do kontynuowania tej podróży słowami i odkrywania piękna języka angielskiego przez klasykę literacką! <em>Happy reading and learning!</em></p>
+            </section>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Pobierz przycisk, styl arkusza CSS i ikonę dark mode
+        const toggleDarkModeButton = document.getElementById("toggleDarkMode");
+        const darkModeStylesheet = document.getElementById("darkModeStylesheet");
+        const darkModeIcon = document.getElementById("darkModeIcon");
+
+        // Dodaj obsługę kliknięcia przycisku
+        toggleDarkModeButton.addEventListener("click", function () {
+            // Przełącz klasę na body, aby włączyć/wyłączyć tryb ciemny
+            document.body.classList.toggle("dark-mode");
+
+            // Zmień ikonę w zależności od aktualnego trybu
+            const isDarkModeEnabled = document.body.classList.contains("dark-mode");
+            if (isDarkModeEnabled) {
+                darkModeIcon.src = "/img/icons/light_mode.png";
+            } else {
+                darkModeIcon.src = "/img/icons/dark_mode.png";
+            }
+
+            // Zapisz preferencje użytkownika w lokalnym składowisku
+            localStorage.setItem("darkModeEnabled", isDarkModeEnabled);
+        });
+
+        // Sprawdź preferencje użytkownika w lokalnym składowisku
+        const isDarkModePreferred = localStorage.getItem("darkModeEnabled") === "true";
+
+        // Jeśli preferencje wskazują na tryb ciemny, włącz go domyślnie
+        if (isDarkModePreferred) {
+            document.body.classList.add("dark-mode");
+            darkModeIcon.src = "/img/icons/light_mode.png";
+        }
+    });
+</script>

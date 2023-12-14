@@ -1,0 +1,1274 @@
+﻿@model HexaLingo.ViewModels.SpanishViewModel
+@{
+    ViewData["Title"] = "Nauka Hiszpańskiego";
+}
+
+<div>
+    <div>
+        <div class="row align-items-center g-5" style="display: flex;">
+            <div class="col-lg-5 col-xl-6 position-relative z-index-1 text-center text-lg-start mb-5 mb-sm-0">
+                <h1>Nauka języka Hiszpańskiego <br> <span class="spanish-color">aprender español</span> </h1>
+                <p class="mb-6 lead pe-lg-6 description">
+                    Zanurz się w fascynujący świat języka <b>Hiszpańskiego</b>, Odkryj skarby tej romantycznej mowy, która otworzy przed Tobą drzwi do wielu krajów i kultur. To podróż, która umożliwi Ci płynne porozumiewanie się w najpiękniejszym języku świata. Rozwijaj swoje umiejętności z nami i otwórz przed sobą nowe horyzonty!"
+                </p>
+            </div>
+            <div class="col-lg-7 col-xl-6 mt-zero-res">
+                <img class="baner img-100" src="/img/others/Baner_Spain.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="mt-5">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+		<div>
+			<h1>Przywitania</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.Greetings)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+										    <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Podstawowe zwroty</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.BasicPhrases)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Pogoda</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.Weather)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Rodzina</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.Family)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Praca</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.Work)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Liczby</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.Numbers)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Kolory</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.Colors)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Jedzenie</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.Food)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Czas</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.Time)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Zakupy</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.Shopping)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Podróże</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.Travel)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Ciało</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.Body)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Szkoła i Edukacja</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.SchoolEducation)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Sport</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.Sport)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Emocje</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.Emotions)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Środki transportu</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.Transportation)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Kierunki i miejsca</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.DirectionsPlaces)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Czas wolny i rozrywka</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.LeisureEntertainment)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Dom i mieszkanie</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.HomeLiving)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Ubrania i moda</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.ClothesFashion)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Technologia</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.Technology)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Zdrowie</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.Health)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Zwierzęta</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.Animals)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Relacje społeczne</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.SocialRelations)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Cele i marzenia</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.GoalsDreams)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+    <div class="slider-big-custom-margin">
+        <div>
+            <h1>Święta i okazje</h1>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    @foreach (var word in Model.HolidaysOccasions)
+                    {
+                        <div class="swiper-slide">
+                            <div class="card">
+                                <div class="card-inside">
+                                    <div class="d-flex">
+                                        <div class="image">
+                                            <img src="@word.IconPath" alt="Card Image">
+                                        </div>
+                                        <div class="d-flex custom-flex">
+                                            <span class="Translated-word">@word.SpanishLang</span>
+                                            <span class="Original-word">@word.PolishLang</span>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex custom-flex mt-3">
+                                        <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                        <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+
+    <script>
+        function toggleFavorite(wordId) {
+            $.ajax({
+                url: '/Word/AddToFavorite',
+                type: 'POST',
+                data: { id: wordId },
+                success: function (data) {
+                    var bookmarkIcon = $(`#bookmark-icon-${wordId}`);
+
+                    // Zmiana obrazu w zależności od tego, czy słówko jest ulubione
+                    bookmarkIcon.attr('src', data.isFavorite ? '/img/icons/fill_bookmark.png' : '/img/icons/empty_bookmark.png');
+                },
+                error: function (error) {
+                    console.error('Wystąpił błąd podczas zapisywania słówka.', error);
+                }
+            });
+        }
+    </script>
+
+
+
+
+
+</div>
+
+
+
+
+
+

@@ -1,0 +1,106 @@
+﻿@page
+@model HexaLingo.Views.Blog.Post4Model
+@{
+}
+
+
+<title>Blog</title>
+<body>
+    <div class="mt-5">
+        <div>
+            <h1>Nauka Hiszpańskiego przez Rytm i Ruch: Melodia Nauki</h1>
+            <p>¡Hola amigos!</p>
+            <section>
+                <h2>Rytm i Ruch w Nauce Języków</h2>
+                <p>Nauka języków to nie tylko sucha gramatyka i fiszki. Wprowadzenie rytmu i ruchu do procesu nauki może uczynić go nie tylko skuteczniejszym, ale także przyjemniejszym. Dlaczego nie nauczyć się hiszpańskiego poprzez tańce, ruchy i melodie?</p>
+            </section>
+
+            <section>
+                <h2>Melodia Hiszpańskiego</h2>
+                <p>Muzyka to uniwersalny język, ale co się stanie, gdy połączymy ją z językiem hiszpańskim? Oto kilka słów i zwrotów, które mogą zaintrygować waszą muzyczną duszę:</p>
+                <ul>
+                    <li><strong>¡Vamos a bailar!</strong> (Chodźmy potańczyć!) - Dodaj tę frazę do swojego słownika, a następnie ruszajcie ciałem do hiszpańskiej muzyki. To nie tylko nauka, to zabawa!</li>
+                    <li><strong>La melodía del amor</strong> (Melodia miłości) - Odkryjcie romantyczne brzmienia hiszpańskiego, ucząc się słów związanych z miłością. ¿Te amo?</li>
+                    <li><strong>Bailando bajo las estrellas</strong> (Tańcząc pod gwiazdami) - Poznajcie słowa związane z ruchem, tańcem i gwiazdami. ¡Qué hermoso! (Jak pięknie!)</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Rytm i Ruch w Nauce Języków</h2>
+                <p>Nauka języków to nie tylko sucha gramatyka i fiszki. Wprowadzenie rytmu i ruchu do procesu nauki może uczynić go nie tylko skuteczniejszym, ale także przyjemniejszym. Dlaczego nie nauczyć się hiszpańskiego poprzez tańce, ruchy i melodie?</p>
+            </section>
+
+            <section>
+                <h2>Melodia Hiszpańskiego</h2>
+                <p>Muzyka to uniwersalny język, ale co się stanie, gdy połączymy ją z językiem hiszpańskim? Oto kilka słów i zwrotów, które mogą zaintrygować waszą muzyczną duszę:</p>
+                <ul>
+                    <li><strong>¡Vamos a bailar!</strong> (Chodźmy potańczyć!) - Dodaj tę frazę do swojego słownika, a następnie ruszajcie ciałem do hiszpańskiej muzyki. To nie tylko nauka, to zabawa!</li>
+                    <li><strong>La melodía del amor</strong> (Melodia miłości) - Odkryjcie romantyczne brzmienia hiszpańskiego, ucząc się słów związanych z miłością. ¿Te amo?</li>
+                    <li><strong>Bailando bajo las estrellas</strong> (Tańcząc pod gwiazdami) - Poznajcie słowa związane z ruchem, tańcem i gwiazdami. ¡Qué hermoso! (Jak pięknie!)</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Kulturowe Ciekawostki</h2>
+                <p>Hiszpania to kraj bogaty nie tylko w język, ale także w kulturę. Oto kilka ciekawostek, które dodadzą smaczku waszej nauce:</p>
+                <ul>
+                    <li><strong>Flamenco:</strong> Flamenco to nie tylko taniec, to ekspresja emocji. Nauczcie się podstawowych kroków i poczujcie pasję hiszpańskiego tańca.</li>
+                    <li><strong>Tapas:</strong> Słowo "tapas" może oznaczać nie tylko małe dania, ale także sposób na rozmowy i wspólną naukę. Zamówcie tapas i porozmawiajcie po hiszpańsku!</li>
+                    <li><strong>Fiesta:</strong> Hiszpanie uwielbiają świętować. Nauczcie się słów związanych z różnymi festiwalami i dołączcie do wspaniałych hiszpańskich fiest.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Wiersz Hiszpański</h2>
+                <p>Przyswajanie nowego języka może być jak poezja. Oto krótki wiersz, który wam pomoże:</p>
+                <p>
+                    <em>Entre las olas suena el mar,</em><br>
+                    (Między falami szumi morze,)<br>
+                    <em>Donde el sol besa la tierra,</em><br>
+                    (Gdzie słońce całuje ziemię,)<br>
+                    <em>Descubre palabras en su susurrar.</em><br>
+                    (Odkryj słowa w jego szeptach.)
+                </p>
+            </section>
+
+            <section>
+                <h2>Podsumowanie</h2>
+                <p>Nauka hiszpańskiego poprzez rytm i ruch to nie tylko sposób na zdobycie nowego języka, ale także na wczucie się w hiszpańską kulturę i emocje. Czyńcie to w rytmie, śpiewajcie słowa, tańczcie z językiem! ¡Buena suerte en su aventura de aprendizaje! (Powodzenia w waszej przygodzie z nauką!)</p>
+            </section>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Pobierz przycisk, styl arkusza CSS i ikonę dark mode
+        const toggleDarkModeButton = document.getElementById("toggleDarkMode");
+        const darkModeStylesheet = document.getElementById("darkModeStylesheet");
+        const darkModeIcon = document.getElementById("darkModeIcon");
+
+        // Dodaj obsługę kliknięcia przycisku
+        toggleDarkModeButton.addEventListener("click", function () {
+            // Przełącz klasę na body, aby włączyć/wyłączyć tryb ciemny
+            document.body.classList.toggle("dark-mode");
+
+            // Zmień ikonę w zależności od aktualnego trybu
+            const isDarkModeEnabled = document.body.classList.contains("dark-mode");
+            if (isDarkModeEnabled) {
+                darkModeIcon.src = "/img/icons/light_mode.png";
+            } else {
+                darkModeIcon.src = "/img/icons/dark_mode.png";
+            }
+
+            // Zapisz preferencje użytkownika w lokalnym składowisku
+            localStorage.setItem("darkModeEnabled", isDarkModeEnabled);
+        });
+
+        // Sprawdź preferencje użytkownika w lokalnym składowisku
+        const isDarkModePreferred = localStorage.getItem("darkModeEnabled") === "true";
+
+        // Jeśli preferencje wskazują na tryb ciemny, włącz go domyślnie
+        if (isDarkModePreferred) {
+            document.body.classList.add("dark-mode");
+            darkModeIcon.src = "/img/icons/light_mode.png";
+        }
+    });
+</script>

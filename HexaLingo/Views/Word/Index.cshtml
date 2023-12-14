@@ -1,0 +1,26 @@
+﻿@model List<Word>
+
+
+<div class="mt-5 text-center">
+	<h1 class="h1-design">Nie udało się odnaleźć strony</h1>
+    <img class="img-100" src="/img/others/Baner_404.png" alt="" />
+</div>
+
+<script>
+    function toggleFavorite(wordId) {
+        $.ajax({
+            url: '/Word/AddToFavorite',
+            type: 'POST',
+            data: { id: wordId },
+            success: function (data) {
+                var bookmarkIcon = $(`#bookmark-icon-${wordId}`);
+
+                // Zmiana obrazu w zależności od tego, czy słówko jest ulubione
+                bookmarkIcon.attr('src', data.isFavorite ? '/img/icons/fill_bookmark.png' : '/img/icons/empty_bookmark.png');
+            },
+            error: function (error) {
+                console.error('Wystąpił błąd podczas zapisywania słówka.', error);
+            }
+        });
+    }
+</script>

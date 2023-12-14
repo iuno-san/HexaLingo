@@ -1,0 +1,307 @@
+﻿@model List<Word>
+
+@{
+    ViewData["Title"] = "Moje słówka";
+}
+
+<h1 class="h1-design">Twoje zapisane słówka</h1>
+
+@if (Model.Any())
+{
+    <div class="mt-5 big-padding">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+
+        <!-- Sekcja dla słówek angielskich -->
+        <div class="language-section" id="english-section">
+            <h2><img class="small-icon-custom" src="/img/icons/eng_flag.png">Angielskie</h2>
+            @if (Model.Any(w => w.Language == "English"))
+            {
+            <div class="swiper-container">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        @foreach (var word in Model.Where(w => w.Language == "English"))
+                        {
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <div class="card-inside">
+                                        <div class="d-flex">
+                                            <div class="image">
+                                                <img src="@word.IconPath" alt="Card Image">
+                                            </div>
+                                            <div class="d-flex custom-flex">
+                                                <span class="Translated-word">@word.EnglishLang</span>
+                                                <span class="Original-word">@word.PolishLang</span>
+
+                                                @*Zostawić w razie wypadku*@
+
+                                                @* @if (word.Language == "English")
+                                                {
+                                                    <span class="Translated-word">@word.EnglishLang</span>
+                                                    <span class="Original-word">@word.PolishLang</span>
+                                                }
+                                                else if (word.Language == "Spanish")
+                                                {
+                                                    <span class="Translated-word">@word.SpanishLang</span>
+                                                    <span class="Original-word">@word.PolishLang</span>
+                                                }
+                                                else if (word.Language == "Germanish")
+                                                {
+                                                    <span class="Translated-word">@word.GermanishLang</span>
+                                                    <span class="Original-word">@word.PolishLang</span>
+                                                }
+                                                else if (word.Language == "Italianish")
+                                                {
+                                                    <span class="Translated-word">@word.ItalianishLang</span>
+                                                    <span class="Original-word">@word.PolishLang</span>
+                                                }
+                                                else if (word.Language == "French")
+                                                {
+                                                    <span class="Translated-word">@word.FrenchLang</span>
+                                                    <span class="Original-word">@word.PolishLang</span>
+                                                } *@
+                                            </div>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                        <div class="d-flex custom-flex mt-3">
+                                            <span class="Sentence-Translated-word">@word.SentenceEnglishLang</span>
+                                            <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            }
+            else
+            {
+                <p class="ms-3">Brak zapisanych słówek.</p>
+            }
+        </div>
+
+		<div class="slider-big-custom-margin"></div>
+        <!-- Sekcja dla słówek angielskich -->
+        <div class="language-section" id="spanish-section">
+            <h2><img class="small-icon-custom" src="/img/icons/spain_flag.png">Hiszpańskie</h2>
+            @if (Model.Any(w => w.Language == "Spanish"))
+            {
+            <div class="swiper-container">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        @foreach (var word in Model.Where(w => w.Language == "Spanish"))
+                        {
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <div class="card-inside">
+                                        <div class="d-flex">
+                                            <div class="image">
+                                                <img src="@word.IconPath" alt="Card Image">
+                                            </div>
+                                            <div class="d-flex custom-flex">
+                                                <span class="Translated-word">@word.SpanishLang</span>
+                                                <span class="Original-word">@word.PolishLang</span>
+                                            </div>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                        <div class="d-flex custom-flex mt-3">
+                                            <span class="Sentence-Translated-word">@word.SentenceSpanishLang</span>
+                                            <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            }
+            else
+            {
+            <p class="ms-3">Brak zapisanych słówek.</p>
+            }
+        </div>
+        <div class="slider-big-custom-margin"></div>
+        <!-- Sekcja dla słówek niemieckich -->
+        <div class="language-section" id="germanish-section">
+            <h2><img class="small-icon-custom" src="/img/icons/ger_flag.png"> Niemieckie</h2>
+            @if (Model.Any(w => w.Language == "Germanish"))
+            {
+            <div class="swiper-container">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        @foreach (var word in Model.Where(w => w.Language == "Germanish"))
+                        {
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <div class="card-inside">
+                                        <div class="d-flex">
+                                            <div class="image">
+                                                <img src="@word.IconPath" alt="Card Image">
+                                            </div>
+                                            <div class="d-flex custom-flex">
+                                                <span class="Translated-word">@word.GermanishLang</span>
+                                                <span class="Original-word">@word.PolishLang</span>
+                                            </div>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                        <div class="d-flex custom-flex mt-3">
+                                            <span class="Sentence-Translated-word">@word.SentenceGermanishLang</span>
+                                            <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            }
+            else
+            {
+            <p class="ms-3">Brak zapisanych słówek.</p>
+            }
+        </div>
+        <div class="slider-big-custom-margin"></div>
+        <!-- Sekcja dla słówek Włoskich -->
+        <div class="language-section" id="italianish-section">
+            <h2><img class="small-icon-custom" src="/img/icons/italy_flag.png"> Włoskie</h2>
+            @if (Model.Any(w => w.Language == "Italianish"))
+            {
+            <div class="swiper-container">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        @foreach (var word in Model.Where(w => w.Language == "Italianish"))
+                        {
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <div class="card-inside">
+                                        <div class="d-flex">
+                                            <div class="image">
+                                                <img src="@word.IconPath" alt="Card Image">
+                                            </div>
+                                            <div class="d-flex custom-flex">
+                                                <span class="Translated-word">@word.ItalianishLang</span>
+                                                <span class="Original-word">@word.PolishLang</span>
+                                            </div>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                        <div class="d-flex custom-flex mt-3">
+                                            <span class="Sentence-Translated-word">@word.SentenceItalianishLang</span>
+                                            <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            }
+            else
+            {
+            <p class="ms-3">Brak zapisanych słówek.</p>
+            }
+        </div>
+
+        <div class="slider-big-custom-margin"></div>
+
+        <!-- Sekcja dla słówek Francuskie -->
+        <div class="language-section" id="french-section">
+            <h2><img class="small-icon-custom" src="/img/icons/france_flag.png"> Francuskie</h2>
+            @if (Model.Any(w => w.Language == "French"))
+            {
+            <div class="swiper-container">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        @foreach (var word in Model.Where(w => w.Language == "French"))
+                        {
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <div class="card-inside">
+                                        <div class="d-flex">
+                                            <div class="image">
+                                                <img src="@word.IconPath" alt="Card Image">
+                                            </div>
+                                            <div class="d-flex custom-flex">
+                                                <span class="Translated-word">@word.FrenchLang</span>
+                                                <span class="Original-word">@word.PolishLang</span>
+                                            </div>
+                                        </div>
+                                        <div class="markbook-item">
+                                            <button class="btn btn-link" onclick="toggleFavorite(@word.Id)">
+                                                <img class="bookmark-icons" id="bookmark-icon-@word.Id" src="@Url.Content(word.IsFavorite ? "/img/icons/fill_bookmark.png" : "/img/icons/empty_bookmark.png")" alt="Bookmark">
+                                            </button>
+                                        </div>
+                                        <div class="d-flex custom-flex mt-3">
+                                            <span class="Sentence-Translated-word">@word.SentenceFrenchLang</span>
+                                            <span class="Sentence-Original-word">@word.SentencePolishLang</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            }
+            else
+            {
+            <p class="ms-3">Brak zapisanych słówek.</p>
+            }
+        </div>
+        @* <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> *@
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+        </div>
+    <div class="slider-big-custom-margin"></div>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script>
+            function toggleFavorite(wordId) {
+                $.ajax({
+                    url: '/Word/AddToFavorite',
+                    type: 'POST',
+                    data: { id: wordId },
+                    success: function (data) {
+                        var bookmarkIcon = $(`#bookmark-icon-${wordId}`);
+
+                        // Zmiana obrazu w zależności od tego, czy słówko jest ulubione
+                        bookmarkIcon.attr('src', data.isFavorite ? '/img/icons/fill_bookmark.png' : '/img/icons/empty_bookmark.png');
+                    },
+                    error: function (error) {
+                        console.error('Wystąpił błąd podczas zapisywania słówka.', error);
+                    }
+                });
+            }
+
+        </script>
+
+    @* </div> *@
+}
+else
+{
+    <p>Brak zapisanych słówek.</p>
+}

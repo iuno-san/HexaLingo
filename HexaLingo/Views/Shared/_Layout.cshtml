@@ -1,0 +1,87 @@
+﻿@{
+    var currentPage = ViewContext.RouteData.Values["action"]?.ToString();
+}
+
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HexaLingo - @ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/HexaLingo.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" type="text/css" href="~/css/dark-mode.css" id="darkModeStylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light mb-3">
+            <div class="container-fluid mx-4">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img class="logo-img" src="~/img/icons/Logo.png"> <span class="logo-title-first">Hexa</span><span class="logo-title-second">Lingo</span></a>
+                @* <button class="navbar-toggler" onclick="toggleActiveClass(this)" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button> *@
+                <div class="navbar-toggle">
+					<span></span>
+					<span></span>
+					<span></span>
+                </div>
+                <div class="navbar-menu">
+                    <div class="centered-box">
+                        <ul class="navbar-nav navbar-navigation flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark @(currentPage == "Index" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Strona główna</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark @(currentPage == "SavedWords" ? "active" : "")" asp-area="" asp-controller="Word" asp-action="savedWords">Moje słówka</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark @(currentPage == "Blog" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Blog">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark @(currentPage == "Contact" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Contact">Kontakt</a>
+                            </li>
+                            <li class="nav-item">
+                                <button class="dark-mode-btn" id="toggleDarkMode">
+                                    <img class="small-icon-custom" id="darkModeIcon" src="/img/icons/dark_mode.png" alt="" />
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+   <div class="mt-4">
+        <footer class="footer text-muted mt-5">
+            <div class="line"></div>
+            <div class="container custom-padding-footer text-center mt-5">
+                <div class="footer-logo">
+                    <span class="logo-title-first-white">Hexa</span><span class="logo-title-second">Lingo</span>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Strona główna</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Blog">Blog</a>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Kontakt</a>
+                        <li><a asp-area="" asp-controller="Word" asp-action="savedWords">Moje słówka</a>
+                    </ul>
+                </div>
+                <div class="footer-copyright">
+                    © 2023 HexaLingo. All rights reserved.
+                </div>
+            </div>
+        </footer>
+   </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

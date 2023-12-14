@@ -1,0 +1,114 @@
+﻿@page
+@model HexaLingo.Views.Blog.Post3Model
+@{
+}
+
+<title>Blog</title>
+<body>
+    <div class="mt-5">
+        <div>
+            <header>
+                <h1>Kulinarne Eksploracje Włoskie:</h1>
+                <h1>Smakowite Słownictwo z Kraju Makaronu</h1>
+                <p>Ciao amici del cibo!</p>
+            </header>
+
+            <section>
+                <h2>Słownictwo Kulinarne: Odkrywanie Włoskich Smaków</h2>
+                <p>Zacznijmy naszą kulinarną podróż po Włoszech. Odkryjemy nie tylko wyjątkowe smaki, ale również bogactwo słownictwa związane z włoską kuchnią. Gotowi na uczucie smaku słów?</p>
+
+                <ul>
+                    <li>
+                        <strong>Antipasto (Przystawka):</strong>
+                        <p>Zacznijmy naszą kulinarną podróż od "antipasto." To bogactwo smaków, takie jak oliwki, prosciutto, ser i świeże warzywa, które rozgrzewają apetyt przed głównym posiłkiem.</p>
+                        <p>Zdanie do nauki: <em>Antipasto è un modo delizioso per iniziare un pasto.</em> (Przystawka to pyszny sposób na rozpoczęcie posiłku.)</p>
+                    </li>
+
+                    <li>
+                        <strong>Risotto:</strong>
+                        <p>"Risotto" to jedno z charakterystycznych dań kuchni włoskiej. Gotowane na wywarze ryżowe, często z dodatkiem warzyw, sera i różnych przypraw.</p>
+                        <p>Słówko do nauki: <em>Risotto al nero di seppia è una prelibatezza italiana.</em> (Risotto z czarnym atramentem kalmarów to włoska przysmak.)</p>
+                    </li>
+
+                    <li>
+                        <strong>Tiramisù:</strong>
+                        <p>Na deser, nie może zabraknąć "tiramisù" – warstw kawy, kremowego sera mascarpone i delikatnych biszkoptów.</p>
+                        <p>Zdanie do nauki: <em>Non c'è nulla di meglio di un tiramisù fatto in casa.</em> (Nie ma nic lepszego niż domowe tiramisù.)</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Kulinarne Ciekawostki</h2>
+                <ul>
+                    <li><strong>Sztuka Przyrządzania Pizzy:</strong> W Neapolu, prawdziwa pizza musi spełnić specyficzne wymogi, a nawet kucharze są szkoloni w "Associazione Verace Pizza Napoletana."</li>
+
+                    <li><strong>Wino i Krajobraz:</strong> Włochy słyną nie tylko z jedzenia, ale także z wyśmienitych win. Wino jest często podawane do posiłków, a włoskie krajobrazy winnic są malownicze.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Wiersz Smakowitych Słów</h2>
+                <p>
+                    <em>Nel giardino d'Italia, sapore e felicità,</em><br>
+                    (W ogrodzie Włoch, smak i radość,)<br>
+                    <em>Pasta e vino, un abbraccio caldo,</em><br>
+                    (Makaron i wino, ciepłe objęcia,)<br>
+                    <em>Gustare ogni morso, una festa ogni pasto.</em><br>
+                    (Smakować każdy kęs, święto przy każdym posiłku.)
+                </p>
+                <p><em>Autore sconosciuto</em></p>
+                <p>Ten wiersz to kulinarne połączenie smaków i emocji, które opisuje uczucie radości płynące z włoskiego jedzenia.</p>
+            </section>
+
+            <section>
+                <h2>Jak zamówić w restauracji?</h2>
+                <ul>
+                    <li>"Il menù, per favore." (Menu, proszę.)</li>
+                    <li>"Vorrei ordinare..." (Chciałbym zamówić...)</li>
+                    <li>"Il conto, per favore." (Rachunek, proszę.)</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Podsumowanie</h2>
+                <p>Włoska kuchnia to nie tylko jedzenie, to uczucie i tradycja. Mam nadzieję, że ta kulinarna podróż po słowach przybliżyła was do smaków Włoch. <em>Ricordatevi di assaporare ogni momento!</em> (Pamiętajcie smakować każdą chwilę!) <em>Buon viaggio culinario!</em> (Smacznego kulinarnej podróży!)</p>
+            </section>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Pobierz przycisk, styl arkusza CSS i ikonę dark mode
+        const toggleDarkModeButton = document.getElementById("toggleDarkMode");
+        const darkModeStylesheet = document.getElementById("darkModeStylesheet");
+        const darkModeIcon = document.getElementById("darkModeIcon");
+
+        // Dodaj obsługę kliknięcia przycisku
+        toggleDarkModeButton.addEventListener("click", function () {
+            // Przełącz klasę na body, aby włączyć/wyłączyć tryb ciemny
+            document.body.classList.toggle("dark-mode");
+
+            // Zmień ikonę w zależności od aktualnego trybu
+            const isDarkModeEnabled = document.body.classList.contains("dark-mode");
+            if (isDarkModeEnabled) {
+                darkModeIcon.src = "/img/icons/light_mode.png";
+            } else {
+                darkModeIcon.src = "/img/icons/dark_mode.png";
+            }
+
+            // Zapisz preferencje użytkownika w lokalnym składowisku
+            localStorage.setItem("darkModeEnabled", isDarkModeEnabled);
+        });
+
+        // Sprawdź preferencje użytkownika w lokalnym składowisku
+        const isDarkModePreferred = localStorage.getItem("darkModeEnabled") === "true";
+
+        // Jeśli preferencje wskazują na tryb ciemny, włącz go domyślnie
+        if (isDarkModePreferred) {
+            document.body.classList.add("dark-mode");
+            darkModeIcon.src = "/img/icons/light_mode.png";
+        }
+    });
+</script>

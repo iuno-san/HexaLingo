@@ -1,0 +1,312 @@
+﻿@model HexaLingo.ViewModels.SpanishViewModel
+@{
+    ViewData["Title"] = "Najlepszy sposób na szybką naukę wielu języków";
+}
+
+ <!--**************** MAIN CONTENT START ****************-->
+ <main>
+    <div class="pt-lg-3">
+        <div class="row align-items-center g-5 d-flex">
+            @* <div class="col-lg-5 col-xl-6 position-relative z-index-1 text-center text-lg-start mb-5 mb-sm-0">
+                <h1>Naucz się podstaw wielu języków szybciej niż kiedykolwiek</h1>
+                <p class="mb-6 lead pe-lg-6 description">
+                    Rewolucyjna aplikacja, otwierająca przed Tobą bramy do wielu języków. Doskonała dla pasjonatów podróży, miłośników kultury i wszystkich, którzy pragną podnieść swoje umiejętności językowe. Doświadcz przyszłości nauki języków z HexaLingo.
+                </p>
+            </div>
+            <div class="col-lg-7 col-xl-6 position-relative z-index-1 text-center">
+                <img class="baner img-100" src="/img/others/Baner_Main.png" alt="">
+            </div> *@
+            <div class="text-center mb-0 mt-1rem">
+				<img class="img-design" src="~/img/others/Baner_languages.png" alt="" />
+            </div>
+            <div class="mt-2">
+				<h1 class="h1-design">
+                    Nauka języków
+                    <br>
+                    Jeszcze nigdy przedtem
+                    <br>
+                    nie była tak prosta
+                </h1>
+            </div>
+            <div class="text-center mt-1rem">
+				<img class="img-100" src="/img/others/Baner_man.png" alt="" />
+            </div>
+        </div>
+		<div class="main-header-flags">
+            <h2 class="ms-3 h2-design">Którego języka dzisiaj spróbujesz...</h2>
+            <div class="main-header-flags-wrap">
+                <div class="d-flex">
+                    <a href="Word/English">
+                        <span class="icon-flags"><img src="/img/icons/eng_flag.png"></span>
+                        <p class="flag-text">Angielski</p>
+                    </a>
+                    <a href="Word/Spanish">
+                        <span class="icon-flags"><img src="/img/icons/spain_flag.png"></span>
+                        <p class="flag-text">Hiszpański</p>
+                    </a>
+                    <a href="Word/Germanish">
+                        <span class="icon-flags"><img src="/img/icons/ger_flag.png"></span>
+                        <p class="flag-text">Niemiecki</p>
+                    </a>
+                    <a href="Word/Italianish">
+                        <span class="icon-flags"><img src="/img/icons/italy_flag.png"></span>
+                        <p class="flag-text">Włoski</p>
+                    </a>
+                    <a href="Word/French">
+                        <span class="icon-flags"><img src="/img/icons/france_flag.png"></span>
+                        <p class="flag-text">Francuski</p>
+                    </a> 
+                </div>
+            </div>
+        </div>
+        <div class="promo-section mt-design">
+            <div>
+                <div class="text-center mb-0">
+                    <img class="img-design" src="~/img/others/Baner_language.png" alt="" />
+                </div>
+                <div class="text-center mt-2">
+					<h1 class="h1-design">Ucz się z naszych <br> Lingo kart</h1>
+                    <p class="p-design">Zanurz się w fascynującym świecie języków dzięki naszym Lingo kartom. Każda karta to nie tylko słówko czy zdanie - to klucz do otwarcia drzwi do nowej kultury i komunikacji. Nasze Lingo karty łączą estetyczny design z praktycznym podejściem do nauki. Jest ich aż <b>`1275`</b></p>
+				</div>
+                <div class="mt-5 mb-5">
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+                </div>
+                <div class="swiper-container">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <div class="card-inside">
+                                        <div class="d-flex">
+                                            <div class="image">
+                                                <img src="/img/icons/good_morning.png" alt="Card Image">
+                                            </div>
+                                            <div class="d-flex custom-flex">
+                                                <span class="Translated-word">Buenos días</span>
+                                                <span class="Original-word">Dzien dobry (rano)</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex custom-flex mt-3">
+                                            <span class="Sentence-Translated-word">¡Buenos días! ¿Cómo estás?</span>
+                                            <span class="Sentence-Original-word">Dzien dobry! Jak sie masz?</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <div class="card-inside">
+                                        <div class="d-flex">
+                                            <div class="image">
+                                                <img src="/img/icons/family.png" alt="Card Image">
+                                            </div>
+                                            <div class="d-flex custom-flex">
+                                                <span class="Translated-word">Family</span>
+                                                <span class="Original-word">Rodzina</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex custom-flex mt-3">
+                                            <span class="Sentence-Translated-word">Family is the most important.</span>
+                                            <span class="Sentence-Original-word">Rodzina jest najwazniejsza.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <div class="card-inside">
+                                        <div class="d-flex">
+                                            <div class="image">
+                                                <img src="/img/icons/windy.png" alt="Card Image">
+                                            </div>
+                                            <div class="d-flex custom-flex">
+                                                <span class="Translated-word">Ventoso</span>
+                                                <span class="Original-word">Wietrznie</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex custom-flex mt-3">
+                                            <span class="Sentence-Translated-word">Oggi cè molto vento, tieniti forte!</span>
+                                            <span class="Sentence-Original-word">Dzisiaj jest bardzo wietrznie, trzymaj sie!</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <div class="card-inside">
+                                        <div class="d-flex">
+                                            <div class="image">
+                                                <img src="/img/icons/sister.png" alt="Card Image">
+                                            </div>
+                                            <div class="d-flex custom-flex">
+                                                <span class="Translated-word">Schwester</span>
+                                                <span class="Original-word">Siostra</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex custom-flex mt-3">
+                                            <span class="Sentence-Translated-word">Meine Schwester liest gerne Bücher.</span>
+                                            <span class="Sentence-Original-word">Moja siostra lubi czytac ksiazki.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <div class="card-inside">
+                                        <div class="d-flex">
+                                            <div class="image">
+                                                <img src="/img/icons/cold.png" alt="Card Image">
+                                            </div>
+                                            <div class="d-flex custom-flex">
+                                                <span class="Translated-word">freddo</span>
+                                                <span class="Original-word">Zimno</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex custom-flex mt-3">
+                                            <span class="Sentence-Translated-word">Vestiti caldamente, oggi fa freddo.</span>
+                                            <span class="Sentence-Original-word">Ubierz sie cieplo, dzisiaj jest zimno.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <div class="card-inside">
+                                        <div class="d-flex">
+                                            <div class="image">
+                                                <img src="/img/icons/meeting.png" alt="Card Image">
+                                            </div>
+                                            <div class="d-flex custom-flex">
+                                                <span class="Translated-word">Réunion</span>
+                                                <span class="Original-word">Spotkanie</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex custom-flex mt-3">
+                                            <span class="Sentence-Translated-word">La réunion daujourd hui a été très productive.</span>
+                                            <span class="Sentence-Original-word">Dzisiejsze spotkanie bylo bardzo produktywne.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <div class="card-inside">
+                                        <div class="d-flex">
+                                            <div class="image">
+                                                <img src="/img/icons/maybe.png" alt="Card Image">
+                                            </div>
+                                            <div class="d-flex custom-flex">
+                                                <span class="Translated-word">Quizás</span>
+                                                <span class="Original-word">Moze</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex custom-flex mt-3">
+                                            <span class="Sentence-Translated-word">¿Podemos encontrarnos mañana? - Quizás.</span>
+                                            <span class="Sentence-Original-word">Czy mozemy sie spotkac jutro? - Moze.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <div class="card-inside">
+                                        <div class="d-flex">
+                                            <div class="image">
+                                                <img src="/img/icons/colleague.png" alt="Card Image">
+                                            </div>
+                                            <div class="d-flex custom-flex">
+                                                <span class="Translated-word">Colleague</span>
+                                                <span class="Original-word">Kolega/Kolezanka z pracy</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex custom-flex mt-3">
+                                            <span class="Sentence-Translated-word">My colleagues at work are very helpful.</span>
+                                            <span class="Sentence-Original-word">Moi koledzy z pracy sa bardzo pomocni.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <div class="card-inside">
+                                        <div class="d-flex">
+                                            <div class="image">
+                                                <img src="/img/icons/grandfather.png" alt="Card Image">
+                                            </div>
+                                            <div class="d-flex custom-flex">
+                                                <span class="Translated-word">Großvater</span>
+                                                <span class="Original-word">Dziadek</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex custom-flex mt-3">
+                                            <span class="Sentence-Translated-word">Mein Opa schaut gerne alte Filme.</span>
+                                            <span class="Sentence-Original-word">Mój dziadek lubi ogladac stare filmy.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+
+                    <!-- If we need scrollbar -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="promo-section mt-design">
+            <div>
+                <div class="text-center mb-0">
+                    <img class="img-design" src="~/img/icons/fill_bookmark.png" alt="" />
+                </div>
+                <div class="text-center mt-2">
+                    <h1 class="h1-design">Zapisuj swoje <br> ulubione słówka</h1>
+                    <p class="p-design">Dodawaj słówka, które szczególnie Cię zaintrygowały, te, które chciałbyś często powtarzać, oraz te, które ułatwią Ci codzienną komunikację. Możliwość personalizacji HexaLingo sprawia, że nauka staje się bardziej indywidualna i dopasowana do <b>Twoich potrzeb</b>.</p>
+                </div>
+                <div class="mt-5 text-center">
+                    <img class="img-100 border-radius-design box-shadow-design" src="/img/others/Baner_savedword.png" alt="" />
+                </div>
+            </div>
+        </div>
+        <div class="promo-section mt-design">
+            <div>
+                <div class="text-center mb-0">
+                    <img class="img-design" src="/img/icons/light_mode.png" alt="" />
+                </div>
+                <div class="text-center mt-2">
+                    <h1 class="h1-design">Tryb ciemny <br> Dark mode</h1>
+                    <p class="p-design">Przełącz się na tryb ciemny klikając <b>Czarny Księżyc</b> a żeby go wyłączyć klikni ponownie w księżyc tym razem żółty. Tryb ciemny nie tylko chroni Twoje oczy przed nadmiernym światłem, ale również dostarcza Ci komfortu podczas nocnych sesji nauki. Rozwijaj swoje umiejętności językowe o każdej porze dnia i nocy, korzystając z funkcji trybu ciemnego. </p>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    </div>
+
+    <script>
+        function toggleFavorite(wordId) {
+            $.ajax({
+                url: '/Word/AddToFavorite',
+                type: 'POST',
+                data: { id: wordId },
+                success: function (data) {
+                    var bookmarkIcon = $(`#bookmark-icon-${wordId}`);
+
+                    // Zmiana obrazu w zależności od tego, czy słówko jest ulubione
+                    bookmarkIcon.attr('src', data.isFavorite ? '/img/icons/fill_bookmark.png' : '/img/icons/empty_bookmark.png');
+                },
+                error: function (error) {
+                    console.error('Wystąpił błąd podczas zapisywania słówka.', error);
+                }
+            });
+        }
+    </script>
+ </main>

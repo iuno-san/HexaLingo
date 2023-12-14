@@ -1,0 +1,120 @@
+﻿@page
+@model HexaLingo.Views.Blog.Post1Model
+@{
+}
+
+<title>Blog</title>
+<body>
+    <div class="mt-5">
+        <div>
+            <header>
+                <h1>Odkrywanie Najbardziej Popularnych Powiedzeń i Przysłów Niemieckich</h1>
+                <p>Hallo Sprachfreunde!</p>
+            </header>
+
+            <section>
+                <h2>Niemieckie Powiedzenia: Przybliżenie Kultury w Jednym Zwrocie</h2>
+                <ul>
+                    <li>
+                        <strong>"Aller Anfang ist schwer."</strong> (Początek jest trudny.)
+                        <p>To powiedzenie przypomina nam, że każdy nowy początek wymaga wysiłku. Dodajcie je do swojej kolekcji motywacyjnych fraz.</p>
+                    </li>
+
+                    <li>
+                        <strong>"Wer rastet, der rostet."</strong> (Kto odpoczywa, ten rdzewieje.)
+                        <p>To przysłowie podkreśla znaczenie aktywności i ciągłego rozwoju. Stawajcie z kanapy i działajcie!</p>
+                    </li>
+
+                    <li>
+                        <strong>"Die Katze im Sack kaufen."</strong> (Kupować kota w worku.)
+                        <p>Ostrzeżenie przed zakupem czegoś bez wcześniejszego sprawdzenia. Ta metaforyczna fraza z pewnością przemówi do waszej intuicji.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Niemieckie Przysłowia: Mądre Słowa Przekazywane przez Pokolenia</h2>
+                <ul>
+                    <li>
+                        <strong>"Des einen Freud, des anderen Leid."</strong> (Jednemu radość, drugiemu smutek.)
+                        <p>Proste i uniwersalne, to przysłowie ukazuje różnice w odczuciach ludzi.</p>
+                    </li>
+
+                    <li>
+                        <strong>"Wo ein Wille ist, ist auch ein Weg."</strong> (Gdzie jest wola, tam jest i sposób.)
+                        <p>To przysłowie zwraca uwagę na siłę determinacji. Świetne do motywowania siebie i innych.</p>
+                    </li>
+
+                    <li>
+                        <strong>"Eile mit Weile."</strong> (Śpiesz się powoli.)
+                        <p>Niemiecki sposób na przypomnienie o umiejętności balansowania między tempem a dokładnością. Cenny komentarz w dzisiejszym szybkim świecie.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Wiersz, Który Mówi Więcej Niż Tysiąc Słów</h2>
+                <p>
+                    <em>Die Sonne geht auf, ein neuer Tag beginnt,</em><br>
+                    (Słońce wschodzi, zaczyna się nowy dzień,)<br>
+                    <em>Die Vögel singen, die Welt erwacht,</em><br>
+                    (Ptaki śpiewają, świat budzi się,)<br>
+                    <em>Mit jedem Atemzug, lernen wir mehr,</em><br>
+                    (Z każdym oddechem uczymy się więcej,)<br>
+                    <em>Deutsche Weisheit, die in der Luft schwebt.</em><br>
+                    (Niemiecka mądrość unosząca się w powietrzu.)
+                </p>
+                <p><em>Autor nieznany</em></p>
+                <p>Ten krótki wiersz podkreśla harmonię i piękno życia, co stanowi integralną część niemieckiej filozofii.</p>
+            </section>
+
+            <section>
+                <h2>Ciekawostki na Koniec</h2>
+                <ul>
+                    <li><strong>Niemiecka Precyzja:</strong> Niemcy są znani z precyzji języka, a słowo "Donaudampfschifffahrtselektrizitätenhauptbetriebswerkbauunterbeamtengesellschaft" było używane jako termin określający stowarzyszenie urzędników zarządzających elektrownią napędzaną parą na Dunaju.</li>
+
+                    <li><strong>Goethe i Jego Wpływ:</strong> Johann Wolfgang von Goethe, niemiecki pisarz i filozof, pozostawił trwały ślad w literaturze niemieckiej. Jego dzieła, takie jak "Faust," są nadal studiowane i cieszą się popularnością.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Podsumowanie</h2>
+                <p>Niemieckie powiedzenia i przysłowia nie tylko ułatwiają zrozumienie kultury, ale także dodają głębi i mądrości naszym rozmowom. Zachęcam was do kontynuowania tej niemieckiej przygody językowej, odkrywając więcej wyrażeń, fraz i mądrości. <em>Viel Erfolg!</em> (Powodzenia!)</p>
+            </section>
+        </div>
+    </div>
+</body>
+<script>
+            document.addEventListener("DOMContentLoaded", function () {
+            // Pobierz przycisk, styl arkusza CSS i ikonę dark mode
+            const toggleDarkModeButton = document.getElementById("toggleDarkMode");
+            const darkModeStylesheet = document.getElementById("darkModeStylesheet");
+            const darkModeIcon = document.getElementById("darkModeIcon");
+
+            // Dodaj obsługę kliknięcia przycisku
+            toggleDarkModeButton.addEventListener("click", function () {
+                // Przełącz klasę na body, aby włączyć/wyłączyć tryb ciemny
+                document.body.classList.toggle("dark-mode");
+
+                // Zmień ikonę w zależności od aktualnego trybu
+                const isDarkModeEnabled = document.body.classList.contains("dark-mode");
+                if (isDarkModeEnabled) {
+                    darkModeIcon.src = "/img/icons/light_mode.png";
+                } else {
+                    darkModeIcon.src = "/img/icons/dark_mode.png";
+                }
+
+                // Zapisz preferencje użytkownika w lokalnym składowisku
+                localStorage.setItem("darkModeEnabled", isDarkModeEnabled);
+            });
+
+            // Sprawdź preferencje użytkownika w lokalnym składowisku
+            const isDarkModePreferred = localStorage.getItem("darkModeEnabled") === "true";
+
+            // Jeśli preferencje wskazują na tryb ciemny, włącz go domyślnie
+            if (isDarkModePreferred) {
+                document.body.classList.add("dark-mode");
+                darkModeIcon.src = "/img/icons/light_mode.png";
+            }
+        });
+    </script>

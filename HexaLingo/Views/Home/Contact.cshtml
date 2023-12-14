@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Kontakt";
+}
+<html>
+<body>
+    <div class="text-center">
+        <div>
+            <h1 class="h1-design">Skontaktuj się z nami</h1>
+            <div class="contact-section">
+                <p>Czy masz pytania, sugestie lub chcesz podzielić się swoimi spostrzeżeniami? Jesteśmy tu, aby Ci pomóc! Skontaktuj się z nami pod adresem e-mail: <a href="mailto:hexalingo@gmail.com">hexalingo@gmail.com</a>.</p>
+                <p>Jesteśmy otwarci na wszelkie uwagi dotyczące naszej aplikacji HexaLingo. Jeśli zauważysz jakiekolwiek błędy, chcesz zgłosić problem techniczny, lub po prostu masz pomysł na nowe słówka w danym języku - daj nam znać! Twoje zaangażowanie pomaga nam stale ulepszać HexaLingo i dostarczać Ci jeszcze lepsze doświadczenia z nauki języków.</p>
+                <p>Dziękujemy za wybór <b>HexaLingo</b>!</p>
+            </div>
+        </div>
+        <div>
+            <img class="img-100" src="/img/others/Baner_Contact.png" alt="" />
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Pobierz przycisk, styl arkusza CSS i ikonę dark mode
+        const toggleDarkModeButton = document.getElementById("toggleDarkMode");
+        const darkModeStylesheet = document.getElementById("darkModeStylesheet");
+        const darkModeIcon = document.getElementById("darkModeIcon");
+
+        // Dodaj obsługę kliknięcia przycisku
+        toggleDarkModeButton.addEventListener("click", function () {
+            // Przełącz klasę na body, aby włączyć/wyłączyć tryb ciemny
+            document.body.classList.toggle("dark-mode");
+
+            // Zmień ikonę w zależności od aktualnego trybu
+            const isDarkModeEnabled = document.body.classList.contains("dark-mode");
+            if (isDarkModeEnabled) {
+                darkModeIcon.src = "/img/icons/light_mode.png";
+            } else {
+                darkModeIcon.src = "/img/icons/dark_mode.png";
+            }
+
+            // Zapisz preferencje użytkownika w lokalnym składowisku
+            localStorage.setItem("darkModeEnabled", isDarkModeEnabled);
+        });
+
+        // Sprawdź preferencje użytkownika w lokalnym składowisku
+        const isDarkModePreferred = localStorage.getItem("darkModeEnabled") === "true";
+
+        // Jeśli preferencje wskazują na tryb ciemny, włącz go domyślnie
+        if (isDarkModePreferred) {
+            document.body.classList.add("dark-mode");
+            darkModeIcon.src = "/img/icons/light_mode.png";
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var navbarToggle = document.querySelector('.navbar-toggle');
+        var navbarMenu = document.querySelector('.navbar-menu');
+
+        navbarToggle.addEventListener('click', function () {
+            navbarToggle.classList.toggle('active');
+            navbarMenu.classList.toggle('active');
+        });
+    });
+</script>

@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Help";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Help site</p>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Pobierz przycisk, styl arkusza CSS i ikonę dark mode
+        const toggleDarkModeButton = document.getElementById("toggleDarkMode");
+        const darkModeStylesheet = document.getElementById("darkModeStylesheet");
+        const darkModeIcon = document.getElementById("darkModeIcon");
+
+        // Dodaj obsługę kliknięcia przycisku
+        toggleDarkModeButton.addEventListener("click", function () {
+            // Przełącz klasę na body, aby włączyć/wyłączyć tryb ciemny
+            document.body.classList.toggle("dark-mode");
+
+            // Zmień ikonę w zależności od aktualnego trybu
+            const isDarkModeEnabled = document.body.classList.contains("dark-mode");
+            if (isDarkModeEnabled) {
+                darkModeIcon.src = "/img/icons/light_mode.png";
+            } else {
+                darkModeIcon.src = "/img/icons/dark_mode.png";
+            }
+
+            // Zapisz preferencje użytkownika w lokalnym składowisku
+            localStorage.setItem("darkModeEnabled", isDarkModeEnabled);
+        });
+
+        // Sprawdź preferencje użytkownika w lokalnym składowisku
+        const isDarkModePreferred = localStorage.getItem("darkModeEnabled") === "true";
+
+        // Jeśli preferencje wskazują na tryb ciemny, włącz go domyślnie
+        if (isDarkModePreferred) {
+            document.body.classList.add("dark-mode");
+            darkModeIcon.src = "/img/icons/light_mode.png";
+        }
+    });
+</script>

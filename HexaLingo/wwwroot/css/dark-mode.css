@@ -1,0 +1,119 @@
+﻿/* dark-mode.css */
+
+body.dark-mode {
+    background-color: #141516;
+    color: #ffffff;
+}
+
+.dark-mode a.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+
+.dark-mode-btn {
+    background-color: transparent;
+    border: 0;
+}
+
+.dark-mode p {
+    color: #c8c2bb !important;
+}
+
+.dark-mode h1 {
+    color: #ddd7cf;
+}
+.dark-mode h2 {
+    color: #ddd7cf;
+}
+.dark-mode nav {
+    background-color: #141516 !important;
+}
+
+.dark-mode a {
+    color: #ddd7cf !important;
+}
+
+.dark-mode span.Translated-word {
+    color: #ddd7cf !important;
+}
+.dark-mode span.Original-word {
+    color: #b3a7a7 !important;
+}
+.dark-mode span.Sentence-Translated-word {
+    color: #4f8eff !important;
+}
+
+.dark-mode span.Sentence-Original-word {
+    color: #b3a7a7 !important;
+}
+
+.dark-mode div.main-header-flags {
+    background-color: #141516 !important;
+    box-shadow: rgba(147, 147, 147, 0.2) 0px 0.125rem 0.875rem 0px;
+}
+
+.dark-mode div.card {
+    background-color: #18191a !important;
+    border-color: #5e5e5e;
+    box-shadow: 0 .125rem .875rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode div.swiper-button-next::after {
+    color: #ddd7cf;
+}
+.dark-mode div.swiper-button-prev::after {
+    color: #ddd7cf;
+}
+.dark-mode .swiper-pagination-bullet-active {
+    background-color: #ddd7cf !important;
+}
+.dark-mode .swiper-pagination-bullet {
+    background-color: #ddd7cf !important;
+}
+.dark-mode div.swiper-button-next {
+    box-shadow: 0px 0 5px #ccc;
+    background-color: #141516 !important;
+}
+.dark-mode div.swiper-button-prev {
+    box-shadow: 0px 0 5px #ccc;
+    background-color: #141516 !important;
+}
+
+.dark-mode img.bookmark-icons {
+    filter: invert(1); /* Odwracanie kolorów dla obrazków w trybie ciemnym */
+}
+
+.dark-mode div.blog-card {
+    background-color: #18191a;
+    box-shadow: 10px 10px 10px #000;
+}
+
+.dark-mode div.contact-section a {
+    color: #6868fb !important;
+}
+
+.dark-mode div.contact-section a:hover {
+    color: #7d7dfb !important;
+}
+
+.dark-mode footer {
+    background-color: #111 !important
+}
+
+.dark-mode span.logo-title-first {
+    color: rgb(183, 183, 183) !important;
+}
+
+.dark-mode .navbar-menu.active {
+    background-color: #1c1d1e !important;
+}
+
+.dark-mode .navbar-toggle span {
+    background-color: #ddd7cf !important;
+}
+
+
+
+
+
+
