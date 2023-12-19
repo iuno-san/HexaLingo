@@ -20,15 +20,16 @@ builder.Services.AddDbContext<HexaLingoDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("HexaLingoConnection")));*/
 
 
-using (var context = new HexaLingoDbContext(new DbContextOptionsBuilder<HexaLingoDbContext>().UseMySQL(builder.Configuration.GetConnectionString("HexaLingoConnection")).Options))
+/*using (var context = new HexaLingoDbContext(new DbContextOptionsBuilder<HexaLingoDbContext>().UseMySQL(builder.Configuration.GetConnectionString("HexaLingoConnection")!).Options))
 {
     try
     {
-        context.Database.OpenConnection();
-        Console.WriteLine("Connection to the database established successfully!");
-        
-        var data = context.Words.ToList();
+        context.Database.Migrate();
+        context.Database.CanConnect();
+        Console.WriteLine(context.Database.CanConnect());
 
+        var data = context.Words.ToList();
+        Console.WriteLine(data);
         foreach (var item in data)
         {
             Console.WriteLine(item.Category);
@@ -42,7 +43,7 @@ using (var context = new HexaLingoDbContext(new DbContextOptionsBuilder<HexaLing
     {
         context.Database.CloseConnection();
     }
-}
+}*/
 
 builder.Services.AddControllersWithViews();
 
