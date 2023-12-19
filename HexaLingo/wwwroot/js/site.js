@@ -114,3 +114,31 @@ document.addEventListener('DOMContentLoaded', function () {
         navbarMenu.classList.toggle('active');
     });
 });
+
+
+$(document).ready(function () {
+    $(".search").keyup(function () {
+        var searchTerm = $(".search").val().toLowerCase();
+
+        $(".swiper-slide").each(function () {
+            var word = $(this);
+            var textToSearch = word.text().toLowerCase();
+
+            if (textToSearch.indexOf(searchTerm) === -1) {
+                word.hide();
+            }
+            else {
+                word.show();
+            }
+        });
+
+        var visibleCount = $('.swiper-slide:visible').length;
+        $('.counter').text(visibleCount + ' Znalezionych słówek');
+
+        if (visibleCount === 0) {
+            $('.no-result').show();
+        } else {
+            $('.no-result').hide();
+        }
+    });
+});

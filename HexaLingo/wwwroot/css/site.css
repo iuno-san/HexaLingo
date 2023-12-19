@@ -234,7 +234,7 @@ a {
 }
 
 .custom-flex {
-    flex-direction: column; /* Ustawia kierunek flex na kolumnê */
+    flex-direction: column; /* Ustawia kierunek flex na kolumnï¿½ */
     flex-wrap: nowrap;
 
 }
@@ -464,9 +464,9 @@ section h2 {
 }
 
 
-/* Responsywnoœc */
+/* Responsywnoï¿½c */
 
-/* Domyœlna szerokoœæ dla wszystkich rozmiarów ekranu */
+/* Domyï¿½lna szerokoï¿½ï¿½ dla wszystkich rozmiarï¿½w ekranu */
 .bookmark-icons {
     width: 24px;
 }
@@ -498,7 +498,7 @@ section h2 {
     }
 
     .flag-text {
-        display: none;
+        font-size: .75rem !important;
     }
 
     .p-design{
@@ -724,7 +724,7 @@ section h2 {
 }
 
 .mt-design{
-    margin-top: 10rem;
+    margin-top: 5rem;
 }
 
 .p-design {
@@ -765,4 +765,73 @@ section h2 {
 
 .swiper-button-next {
     transform: translateX(80%) !important;
+}
+
+
+.results tr[visible='false'],
+.no-result {
+    display: none;
+}
+
+.results tr[visible='true'] {
+    display: table-row;
+}
+
+.counter {
+    padding: 8px;
+    color: #ccc;
+}
+
+
+@media only screen and (min-width: 568px) {
+    .search-bar {
+        margin-bottom: 2rem;
+        margin-top: 2.5rem;
+    }
+}
+
+.search-bar {
+    width: 100%;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05);
+    padding: .75rem 1.5rem;
+    display: flex;
+    border-width: 1px;
+    border-radius: .5rem;
+    background-color: white;
+}
+
+    .search-bar button {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+    }
+
+    .search-bar img {
+        width: 30px;
+        margin-bottom: -5px;
+    }
+
+    .search-bar input::placeholder, textarea::placeholder {
+        color: #4c5b6c;
+    }
+
+    .search-bar input {
+        width: 100%;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        font-size: 1rem;
+        margin: 5px 1rem 0;
+    }
+
+@media only screen and (min-width: 568px) {
+    .search-bar input {
+        font-size: 1.5rem;
+    }
+}
+
+div.form-control:focus, .form-control{
+    box-shadow: none !important;
+    background-color: transparent !important;
+
 }

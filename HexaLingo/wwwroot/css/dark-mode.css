@@ -112,8 +112,25 @@ body.dark-mode {
     background-color: #ddd7cf !important;
 }
 
+.dark-mode div.form-control:focus {
+    background-color: none !important;
+}
 
+.dark-mode .search-bar input::placeholder, textarea::placeholder {
+    color: #ddd7cf !important;
+}
 
+.dark-mode .search-bar {
+    background-color: #2a2c2d !important;
+}
+
+.dark-mode .form-control {
+    color: #ddd7cf !important;
+}
+
+.dark-mode div.form-control:focus {
+    background-color: transparent;
+}
 
 
 
