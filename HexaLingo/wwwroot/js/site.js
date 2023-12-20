@@ -2,7 +2,7 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-var swiper = new Swiper('.mySwiper', {
+const swiper = new Swiper('.mySwiper', {
     slidesPerView: 3,
     spaceBetween: 10,
     pagination: {
@@ -26,7 +26,9 @@ var swiper = new Swiper('.mySwiper', {
             spaceBetween: 20,
         },
     },
+    freeMode: true,
 });
+
 
 
 // site.js

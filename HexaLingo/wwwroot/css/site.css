@@ -190,16 +190,6 @@ a {
     transform: translateX(-100%);
 }
 
-.swiper-pagination {
-    transform: translateY(200%);
-}
-
-.swiper-pagination-bullet {
-    background: #fff;
-    width: 15px;
-    height: 15px;
-}
-
 .swiper-pagination-bullet-active{
     background-color: black !important;
 }

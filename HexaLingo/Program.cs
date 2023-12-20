@@ -17,8 +17,8 @@ builder.Services.AddDbContext<HexaLingoDbContext>(options =>
 });
 
 /*builder.Services.AddDbContext<HexaLingoDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("HexaLingoConnection")));
-*/
+    options.UseSqlServer(builder.Configuration.GetConnectionString("HexaLingoConnection")));*/
+
 
 /*using (var context = new HexaLingoDbContext(new DbContextOptionsBuilder<HexaLingoDbContext>().UseMySQL(builder.Configuration.GetConnectionString("HexaLingoConnection")!).Options))
 {
