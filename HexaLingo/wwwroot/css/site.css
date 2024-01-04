@@ -825,3 +825,11 @@ div.form-control:focus, .form-control{
     background-color: transparent !important;
 
 }
+
+.main-header-flags-wrap a {
+    transition: 1s;
+}
+
+.main-header-flags-wrap a:hover {
+    transform: translateY(-20px);
+}
