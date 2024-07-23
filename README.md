@@ -2,19 +2,19 @@
 <a href="https://hexalingo.com/"><img width="1000" src="https://raw.githubusercontent.com/iuno-san/HexaLingo/main/HexaLingo/wwwroot/img/others/Baner_Main.png" /></a>
 
 # 🎴 About
-HexaLingo to innowacyjna aplikacja stworzona z myślą o skutecznej nauce różnych języków w szybki i przyjemny sposób. Dzięki prostemu interfejsowi oraz zaawansowanym funkcjom, HexaLingo zapewnia użytkownikom pełne wsparcie w zdobywaniu nowych umiejętności językowych. Naucz się 5 języków już teraz.<br><br>
+HexaLingo is an innovative application designed to effectively learn various languages ​​in a quick and enjoyable way. Thanks to its simple interface and advanced functions, HexaLingo provides users with full support in acquiring new language skills. Learn 5 languages ​​now.<br><br>
 
 ## 🃏 Ucz się z naszych Lingo kart
-- Skuteczna nauka słownictwa i zwrotów poprzez interaktywne fiszki oraz kontekstowe zdania.<br>
+- Effective learning of vocabulary and phrases through interactive flashcards and contextual sentences.<br>
 
 ## 🏷 Zapisuj swoje ulubione słówka
-- Dodawaj interesujące cię słówka do ulubionych, aby mieć szybki dostęp i zwiększyć skuteczność nauki.<br>
+- Add words you are interested in to your favorites for quick access and to increase learning efficiency.<br>
 
 ## 🌜 Tryb ciemny - Dark mode
-- Rozwijaj swoje umiejętności językowe o każdej porze dnia i nocy, korzystając z funkcji trybu ciemnego.<br>
+- Improve your language skills at any time of the day or night using the dark mode feature.<br>
 
 ## 🗒 Blog edukacyjny
-- Dodatkowa dawka wiedzy dzięki blogowi, który zawiera tematy związane z nauką języków obcych. <br><br>
+- An additional dose of knowledge thanks to a blog that contains topics related to learning foreign languages. <br><br>
 
 # 🛠️What I did
 I developed a dynamic web application HexaLingo using ASP.NET Core MVC, showcasing proficiency in SQL for effective database management. Successfully deployed the application, configured secure database connections on the server, and administered a VPS running on Linux Alpine. Mastered both development and system administration aspects, achieving a well-rounded skill set. <br><br>
