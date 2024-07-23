@@ -4,16 +4,16 @@
 # 🎴 About
 HexaLingo is an innovative application designed to effectively learn various languages ​​in a quick and enjoyable way. Thanks to its simple interface and advanced functions, HexaLingo provides users with full support in acquiring new language skills. Learn 5 languages ​​now.<br><br>
 
-## 🃏 Ucz się z naszych Lingo kart
+## 🃏 Learn with our Lingo cards
 - Effective learning of vocabulary and phrases through interactive flashcards and contextual sentences.<br>
 
-## 🏷 Zapisuj swoje ulubione słówka
+## 🏷 Write down your favorite words
 - Add words you are interested in to your favorites for quick access and to increase learning efficiency.<br>
 
-## 🌜 Tryb ciemny - Dark mode
+## 🌜Dark mode
 - Improve your language skills at any time of the day or night using the dark mode feature.<br>
 
-## 🗒 Blog edukacyjny
+## 🗒 Educational blog
 - An additional dose of knowledge thanks to a blog that contains topics related to learning foreign languages. <br><br>
 
 # 🛠️What I did
